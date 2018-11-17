@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
@@ -20,15 +20,19 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 double i = int.Parse(textBox1.Text);
-                for (int j = 1; j < int.Parse(comboBox2.SelectedItem.ToString()); j++)
+                double kasa = i;
+                int iloscLat = 0;
+                while (kasa<=1000000)
                 {
-                    i = i * (1 + 0.01 * int.Parse(comboBox1.SelectedItem.ToString()));
+                    kasa = kasa * (1 + 0.01 * int.Parse(comboBox1.SelectedItem.ToString()));
+                    iloscLat++;
                 }
-                textBox4.Text = $"{i:F2}";
-                
+                textBox4.Text = iloscLat.ToString();
+
             } catch(Exception)
             {
                 
@@ -44,15 +48,10 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             for (int i = 1; i <= 5; i++)
-            {
-                
+            {    
                 comboBox1.Items.Add(i);
-
             }
-            for (int i = 1; i <= 20; i++)
-            {
-                comboBox2.Items.Add(i);
-            }
+            
         }
     }
 }

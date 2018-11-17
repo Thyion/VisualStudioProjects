@@ -28,7 +28,6 @@ namespace WindowsFormsApplication1
                     i = i * (1 + 0.01 * int.Parse(comboBox1.SelectedItem.ToString()));
                 }
                 textBox4.Text = $"{i:F2}";
-                
             } catch(Exception)
             {
                 

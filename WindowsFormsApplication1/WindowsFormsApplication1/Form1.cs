@@ -38,12 +38,15 @@ namespace WindowsFormsApplication1
 
 
         //form load wgrywa sie na poczatku odpalania aplikacji. 
+        //odpalamy go klikajac 2 razy na "pulpit" naszej aplikacji
         //Pozwala na wgranie danych do kontrolek, list wybieralnych itp
         private void Form1_Load(object sender, EventArgs e)
         {
             for (int i = 1; i <= 5; i++)
             {
+                
                 comboBox1.Items.Add(i);
+
             }
             for (int i = 1; i <= 20; i++)
             {

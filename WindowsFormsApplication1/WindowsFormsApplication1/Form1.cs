@@ -18,5 +18,37 @@ namespace WindowsFormsApplication1
         }
         
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double i = int.Parse(textBox1.Text);
+                for (int j = 1; j < int.Parse(comboBox2.SelectedItem.ToString()); j++)
+                {
+                    i = i * (1 + 0.01 * int.Parse(comboBox1.SelectedItem.ToString()));
+                }
+                textBox4.Text = $"{i:F2}";
+            } catch(Exception)
+            {
+                
+            }
+            
+
+        }
+
+
+        //form load wgrywa sie na poczatku odpalania aplikacji. 
+        //Pozwala na wgranie danych do kontrolek, list wybieralnych itp
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                comboBox1.Items.Add(i);
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                comboBox2.Items.Add(i);
+            }
+        }
     }
 }
